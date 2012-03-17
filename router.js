@@ -1,10 +1,10 @@
-var routes = require('./routes.js').routes
+var routes = require('./config/routes.js').routes
 
-function route(pathname, response){
+function route(pathname, params, response){
   if (typeof routes[pathname] === 'function'){
-    routes[pathname](response);
+    routes[pathname](pathname, params, response);
   } else {
-    routes['not_found'](response);
+    routes['not_found'](pathname, params, response);
   }  
 }
 
