@@ -1,14 +1,9 @@
-var fs = require('fs')
+var fs = require('fs');
 // static controller
 var Home = {
-  notFound: function(request, response){
-    response.writeHead(404, {"Content-Type": "text/html"});
-    response.end("Not Found, 404");
-  },
-
-  index: function(request, response) {
-    response.writeHead(200, {"Content-Type": "text/html"});
-    response.end('Hello!');
+  index: function(route) {
+    this.res.writeHead(200, {"Content-Type": "text/plain"});
+    this.res.end('Hello!');
   }
 }
 
