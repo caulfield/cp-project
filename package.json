@@ -5,7 +5,8 @@
   "author": "Sergey Kuchmistov",
   "dependencies": {
     "director": ">= 1.x.x",
-    "nodeload": "*"
+    "nodeload": "*",
+    "up": "*"
   },
   "engine": "node 0.6.9"
 }
