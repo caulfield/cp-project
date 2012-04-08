@@ -3,3 +3,4 @@ prof
 .rvmrc
 Capfile
 config/deploy.rb
+/node_modules

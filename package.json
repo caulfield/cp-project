@@ -1,0 +1,10 @@
+{
+  "name": "cp-project",
+  "version": "0.0.1",
+  "description": "course-paper project",
+  "author": "Sergey Kuchmistov",
+  "dependencies": {
+    "director": ">= 1.x.x"
+  },
+  "engine": "node 0.6.9"
+}
