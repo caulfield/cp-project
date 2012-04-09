@@ -4,7 +4,8 @@
   "description": "course-paper project",
   "author": "Sergey Kuchmistov",
   "dependencies": {
-    "director": ">= 1.x.x"
+    "director": ">= 1.x.x",
+    "nodeload": "*"
   },
   "engine": "node 0.6.9"
 }
