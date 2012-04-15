@@ -8,7 +8,7 @@ var Home = {
 
   staticJSON: function(filename){
     var con = this;
-    fs.readFile("./json/"+filename+".json", function(err, file){
+    fs.readFile("./json/"+filename, function(err, file){
       if (err) {
         con.res.writeHead(404, {"Content-Type":"text/plain"});
         con.res.end("File not found, 404");
