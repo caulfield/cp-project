@@ -4,14 +4,14 @@ var nl = require('nodeload')
 
 var loadtest = nl.run({
   name: "First test",
-  numUsers: 100,
+  numUsers: 200,
   host: 'localhost',
   port: 8888,
   timeLimit: 30,
   targetRps: 500,
   stats: ['latency','result-codes', 'concurrency'],
   methods: 'GET',
-  path: '/json/products/'
+  path: '/json/products'
 });
 
 loadtest.on('end', function() { console.log('tests done'); });
