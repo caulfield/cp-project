@@ -6,7 +6,8 @@
   "dependencies": {
     "director": ">= 1.x.x",
     "nodeload": "*",
-    "up": "*"
+    "up": "*",
+    "jade": ">= 0.25.0"
   },
   "engine": "node 0.6.9"
 }
