@@ -1,9 +1,13 @@
-var fs = require('fs');
+var fs = require('fs'),
+    jade = require('jade');
 
 var Home = {
-  index: function() {
-    this.res.writeHead(200, {"Content-Type": "text/plain"});
-    this.res.end('Hello!');
+  index: function(){
+    var con = this;
+    jade.renderFile('views/home/index.jade', function(err, html){
+      if (err) throw err;
+      con.res.end(html);
+    });
   },
 
   staticJSON: function(filename){
@@ -13,8 +17,10 @@ var Home = {
         con.res.writeHead(404, {"Content-Type":"text/plain"});
         con.res.end("File not found, 404");
       } else {
-        con.res.writeHead(200, {"Content-Type":"application/json"});
-        con.res.end(file);
+        jade.renderFile('views/home/staticJSON.jade', {file: file}, function(err, html){
+          if (err) throw err;
+          con.res.end(html);
+        });
       }
     });
   }
