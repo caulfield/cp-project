@@ -11,7 +11,7 @@ var loadtest = nl.run({
   targetRps: 500,
   stats: ['latency','result-codes', 'concurrency'],
   methods: 'GET',
-  path: '/json/products.json'
+  path: '/random'
 });
 
 loadtest.on('end', function() { console.log('tests done'); });
