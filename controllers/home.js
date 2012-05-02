@@ -16,9 +16,9 @@ var Home = {
   },
 
   random: function(){
-    // time for generating so big json!(2 seconds)
+    // time for generating so big json!
     // sleep will block!
-    sleep(2000);
+    sleep(70);
     var json = {a:Math.random(), b:Math.random()}
     var con = this;
     jade.renderFile('views/home/json-file.jade', {data: JSON.stringify(json, null, 2)}, function(err, html){
