@@ -1,10 +1,27 @@
 var fs = require('fs'),
     jade = require('jade');
 
+function sleep(milliSeconds){
+  var startTime = new Date().getTime();
+  while (new Date().getTime() < startTime + milliSeconds);
+}
+
 var Home = {
   index: function(){
     var con = this;
     jade.renderFile('views/home/index.jade', function(err, html){
+      if (err) throw err;
+      con.res.end(html);
+    });
+  },
+
+  random: function(){
+    // time for generating so big json!(2 seconds)
+    // sleep will block!
+    sleep(2000);
+    var json = {a:Math.random(), b:Math.random()}
+    var con = this;
+    jade.renderFile('views/home/json-file.jade', {data: JSON.stringify(json, null, 2)}, function(err, html){
       if (err) throw err;
       con.res.end(html);
     });
@@ -17,7 +34,7 @@ var Home = {
         con.res.writeHead(404, {"Content-Type":"text/plain"});
         con.res.end("File not found, 404");
       } else {
-        jade.renderFile('views/home/staticJSON.jade', {file: file}, function(err, html){
+        jade.renderFile('views/home/json-file.jade', {data: file}, function(err, html){
           if (err) throw err;
           con.res.end(html);
         });

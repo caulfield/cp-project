@@ -6,6 +6,9 @@ var routes = {
    },
   '/json/:filename': {
     get: home.staticJSON
+  },
+  '/random/':{
+    get: home.random
   }
 }
 
