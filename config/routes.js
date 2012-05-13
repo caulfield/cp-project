@@ -1,4 +1,5 @@
-var home = require('../controllers/home.js').Home
+var home = require('../controllers/home.js').Home,
+    api = require('../controllers/api.js').Api
 
 var routes = {
   '/': {
@@ -9,6 +10,12 @@ var routes = {
   },
   '/random/':{
     get: home.random
+  },
+  '/api/': {
+    get: api.index
+  },
+  '/api/random': {
+    get: api.random
   }
 }
 
