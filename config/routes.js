@@ -11,10 +11,10 @@ var routes = {
   '/random/':{
     get: home.random
   },
-  '/api/': {
+  '/fast/': {
     get: api.index
   },
-  '/api/random': {
+  '/fast/random': {
     get: api.random
   }
 }
